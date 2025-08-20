@@ -1,0 +1,23 @@
+@startuml
+class CategoryService {
+  + create_category(name)
+  + list_categories()
+}
+class AttributeService {
+  + add_attribute(category_id, name, data_type, is_required)
+  + list_attributes(category_id)
+}
+class ProductService {
+  + create_product(name, sku, category_id, attributes: dict)
+  + get_product(id)
+  + list_products()
+  + update_product(id, payload)
+  + delete_product(id)
+  - _validate_attributes(category_id, attributes: dict)
+}
+CategoryService -> Category
+AttributeService -> AttributeDef
+ProductService -> Product
+ProductService -> AttributeDef : validates
+ProductService -> ProductAttributeValue : persists values
+@enduml

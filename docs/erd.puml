@@ -1,0 +1,35 @@
+@startuml
+entity Category {
+  * id : int <<PK>>
+  --
+  name : varchar
+}
+entity AttributeDef {
+  * id : int <<PK>>
+  --
+  name : varchar
+  data_type : enum(text|number|boolean)
+  is_required : boolean
+  category_id : int <<FK>>
+}
+entity Product {
+  * id : int <<PK>>
+  --
+  name : varchar
+  sku : varchar
+  category_id : int <<FK>>
+}
+entity ProductAttributeValue {
+  * id : int <<PK>>
+  --
+  product_id : int <<FK>>
+  attribute_def_id : int <<FK>>
+  value_text : text
+  value_number : double
+  value_boolean : boolean
+}
+Category ||--o{ AttributeDef : has
+Category ||--o{ Product : has
+Product ||--o{ ProductAttributeValue : has
+AttributeDef ||--o{ ProductAttributeValue : defines
+@enduml
