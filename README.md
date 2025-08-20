@@ -5,7 +5,7 @@ This is a simple **Flask-based REST API** for managing categories, products, and
 It demonstrates CRUD (Create, Read, Update, Delete) operations with a relational database using **Flask + SQLAlchemy**.
 
 ## 🚀 Features
-- Add, view, update, and delete **Categories**
+- Add and view  **Categories**
 - Add, view, update, and delete **Products**
 - Add attributes to products (e.g., size, color, etc.)
 - Relational mapping between Categories → Products → Attributes
