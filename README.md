@@ -22,8 +22,6 @@ It demonstrates CRUD (Create, Read, Update, Delete) operations with a relational
 ### Category
 - **POST** `/categories/add` → Add a category  
 - **GET** `/categories` → Get all categories  
-- **PUT** `/categories/<id>` → Update category by ID  
-- **DELETE** `/categories/<id>` → Delete category by ID  
 
 ### Product
 - **POST** `/products/add` → Add a product  
